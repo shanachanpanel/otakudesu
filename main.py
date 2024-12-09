@@ -1,11 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from werkzeug.middleware.proxy_fix import ProxyFix
-from /api/index import Home
-from /api/reads import Reads
-from /api/view import View
-from /api/search import Search
-from /api/genre import Genres
+from api.index import Home
+from api.reads import Reads
+from api.view import View
+from api.search import Search
+from api.genre import Genres
 from results import Output
 
 app = Flask(__name__)
