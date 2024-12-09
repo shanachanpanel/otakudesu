@@ -23,7 +23,7 @@ def add_header(response):
 # INDEX API
 @app.route("/")
 def index():
-    return Output.results(NoneType, "Welcome to my API", 200)
+    return Output.results(None, "Welcome to my API", 200)
 
 
 # INDEX API
@@ -42,9 +42,9 @@ def info():
         if url:
             Main = Reads(url="https://otakudesu.cloud/anime/" + url)
             return Output.results(Main.results, "success", 200)
-        return Output.results(NoneType, "Data is required!", 400)
+        return Output.results(None, "Data is required!", 400)
     except Exception as e:
-        return Output.results({"data": NoneType}, f"error {e}", 400)
+        return Output.results({"data": None}, f"error {e}", 400)
 
 
 # STREAM
