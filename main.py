@@ -1,11 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from werkzeug.middleware.proxy_fix import ProxyFix
-from api.index import Home
-from api.reads import Reads
-from api.view import View
-from api.search import Search
-from api.genre import Genres
+from /api/index import Home
+from /api/reads import Reads
+from /api/view import View
+from /api/search import Search
+from /api/genre import Genres
 from results import Output
 
 app = Flask(__name__)
@@ -23,14 +23,14 @@ def add_header(response):
 # INDEX API
 @app.route("/")
 def index():
-    return Output.results(None, "Welcome to my API", 200)
+    return Output.results(NoneType, "Welcome to my API", 200)
 
 
 # INDEX API
 @app.route("/api/otakudesu/")
 def otakudesu():
     return Output.results(
-        None, "Check Documentation on github.com/Latip176/otakudesu-api", 200
+        None, "Check Documentation on github.com/shanachanpanel/otakudesu", 200
     )
 
 
@@ -42,9 +42,9 @@ def info():
         if url:
             Main = Reads(url="https://otakudesu.cloud/anime/" + url)
             return Output.results(Main.results, "success", 200)
-        return Output.results(None, "Data is required!", 400)
+        return Output.results(NoneType, "Data is required!", 400)
     except Exception as e:
-        return Output.results({"data": None}, f"error {e}", 400)
+        return Output.results({"data": NoneType}, f"error {e}", 400)
 
 
 # STREAM
